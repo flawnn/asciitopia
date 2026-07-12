@@ -1,10 +1,26 @@
 import { describe, expect, it } from 'vitest';
-import { patterns } from './registry.js';
+import { FirePattern } from './patterns/fire.js';
+import { createPattern, getPattern, patterns } from './registry.js';
 
-// Placeholder smoke test wiring the runner. Real per-pattern init/update/
-// render tests against a mock 2D context land alongside the implementation.
-describe('@asciitopia/core skeleton', () => {
-  it('exposes a patterns registry', () => {
-    expect(Array.isArray(patterns)).toBe(true);
+describe('pattern registry', () => {
+  it('registers the five shipped patterns in gallery display order', () => {
+    expect(patterns.map((entry) => entry.id)).toEqual(['fire', 'rain', 'snow', 'waves', 'aurora']);
+  });
+
+  it('looks up entries by id', () => {
+    expect(getPattern('fire')?.name).toBe('Fire');
+    expect(getPattern('nope')).toBeUndefined();
+  });
+
+  it('creates configured instances via createPattern', () => {
+    expect(createPattern('fire')).toBeInstanceOf(FirePattern);
+    expect(createPattern('fire', { mode: 'campfire' })).toBeInstanceOf(FirePattern);
+    expect(createPattern('nope')).toBeUndefined();
+  });
+
+  it('exposes each pattern defaults on its entry', () => {
+    for (const entry of patterns) {
+      expect(Object.keys(entry.configDefaults).length).toBeGreaterThan(0);
+    }
   });
 });
