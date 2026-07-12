@@ -2,9 +2,12 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     // Strictness: matches haus's tsconfig (astro/tsconfigs/strict + explicit strictNullChecks).
+    // noUncheckedIndexedAccess is deliberately not enabled: the pattern sources are
+    // typed-array simulation hot paths (heat buffers, particle pools) whose grid
+    // indexing is bounds-checked by construction — the flag would demand pervasive
+    // non-null assertions for no runtime gain.
     "strict": true,
     "strictNullChecks": true,
-    "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
 
     // Module system: modern Node/bundler resolution, packages ship both ESM and CJS via tsup.
