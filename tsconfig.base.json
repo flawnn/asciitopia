@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    // Strictness: matches haus's tsconfig (astro/tsconfigs/strict + explicit strictNullChecks).
+    "strict": true,
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+
+    // Module system: modern Node/bundler resolution, packages ship both ESM and CJS via tsup.
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "moduleDetection": "force",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "verbatimModuleSyntax": true,
+
+    // Declarations are emitted by tsup per-package; tsc itself only typechecks (noEmit in each package tsconfig).
+    "declaration": true,
+    "declarationMap": true
+  }
+}

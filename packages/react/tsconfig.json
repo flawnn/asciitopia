@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "noEmit": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    // Resolve @asciitopia/core from source for typecheck, decoupling it from
+    // core's build output (CI order is install -> lint -> typecheck -> build).
+    "paths": {
+      "@asciitopia/core": ["../core/src/index.ts"]
+    }
+  },
+  "include": ["src"]
+}
