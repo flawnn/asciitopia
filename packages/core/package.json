@@ -1,0 +1,94 @@
+{
+  "name": "@asciitopia/core",
+  "version": "0.0.0",
+  "description": "Framework-agnostic ASCII canvas animation engine and patterns.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./patterns/fire": {
+      "import": {
+        "types": "./dist/patterns/fire.d.ts",
+        "default": "./dist/patterns/fire.js"
+      },
+      "require": {
+        "types": "./dist/patterns/fire.d.cts",
+        "default": "./dist/patterns/fire.cjs"
+      }
+    },
+    "./patterns/rain": {
+      "import": {
+        "types": "./dist/patterns/rain.d.ts",
+        "default": "./dist/patterns/rain.js"
+      },
+      "require": {
+        "types": "./dist/patterns/rain.d.cts",
+        "default": "./dist/patterns/rain.cjs"
+      }
+    },
+    "./patterns/snow": {
+      "import": {
+        "types": "./dist/patterns/snow.d.ts",
+        "default": "./dist/patterns/snow.js"
+      },
+      "require": {
+        "types": "./dist/patterns/snow.d.cts",
+        "default": "./dist/patterns/snow.cjs"
+      }
+    },
+    "./patterns/waves": {
+      "import": {
+        "types": "./dist/patterns/waves.d.ts",
+        "default": "./dist/patterns/waves.js"
+      },
+      "require": {
+        "types": "./dist/patterns/waves.d.cts",
+        "default": "./dist/patterns/waves.cjs"
+      }
+    },
+    "./patterns/aurora": {
+      "import": {
+        "types": "./dist/patterns/aurora.d.ts",
+        "default": "./dist/patterns/aurora.js"
+      },
+      "require": {
+        "types": "./dist/patterns/aurora.d.cts",
+        "default": "./dist/patterns/aurora.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "simplex-noise": "^4.0.3"
+  },
+  "devDependencies": {
+    "tsup": "8.5.1",
+    "typescript": "5.9.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
