@@ -631,6 +631,54 @@ input[type="text"]:focus {
   color: var(--ink-dim);
 }
 
+/* ---------- wordmark preview (#/wordmark) ---------- */
+
+.wordmark-page {
+  position: fixed;
+  inset: 0;
+}
+
+.wordmark-page--dark {
+  background: #0c0c0f;
+}
+
+.wordmark-page--light {
+  background: #f2f0e9;
+}
+
+.wordmark-page__canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.wordmark-page__toggle {
+  position: fixed;
+  top: 22px;
+  right: var(--pad-x);
+  padding: 8px 14px;
+  border: 1px solid var(--line-bright);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.wordmark-page--dark .wordmark-page__toggle {
+  color: var(--ink-dim);
+}
+
+.wordmark-page--light .wordmark-page__toggle {
+  color: #6b675d;
+  border-color: #c9c5b8;
+}
+
+.wordmark-page__toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 /* ---------- missing / footer ---------- */
 
 .missing {

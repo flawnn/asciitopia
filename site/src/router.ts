@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 
 // Hash routing: survives GitHub Pages' lack of SPA rewrites, no dependency.
-export type Route = { view: 'home' } | { view: 'detail'; id: string };
+export type Route = { view: 'home' } | { view: 'detail'; id: string } | { view: 'wordmark' };
 
 const parse = (hash: string): Route => {
+  if (hash === '#/wordmark') return { view: 'wordmark' }; // temporary preview route
   const match = /^#\/pattern\/([\w-]+)$/.exec(hash);
   return match ? { view: 'detail', id: match[1] } : { view: 'home' };
 };
