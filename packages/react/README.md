@@ -1,12 +1,20 @@
 # @asciitopia/react
 
-> **Placeholder.** The real README for this package lands with the root
-> README, before v0.1.0 ships.
+React bindings for [`@asciitopia/core`](https://www.npmjs.com/package/@asciitopia/core): a single `<AsciiBackground>` component. React is a peer dependency (`>=18`).
 
-React bindings for [`@asciitopia/core`](https://www.npmjs.com/package/@asciitopia/core) —
-a single `<AsciiBackground>` component. React is a peer dependency. See the
-[monorepo root](https://github.com/flawnn/asciitopia) for the full project.
+```bash
+npm install @asciitopia/react @asciitopia/core
+```
 
-## License
+```tsx
+import { AsciiBackground } from '@asciitopia/react';
 
-MIT — see [LICENSE](./LICENSE).
+// Size the canvas via CSS; the component sizes off the observed box.
+export const App = () => (
+  <AsciiBackground className="ascii-bg" pattern="fire" />
+);
+```
+
+Full docs, pattern gallery, and configuration reference: [github.com/flawnn/asciitopia](https://github.com/flawnn/asciitopia).
+
+MIT, see [LICENSE](./LICENSE).
