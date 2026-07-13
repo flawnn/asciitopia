@@ -90,5 +90,12 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flawnn/asciitopia.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/flawnn/asciitopia",
+  "bugs": "https://github.com/flawnn/asciitopia/issues"
 }
