@@ -1,0 +1,30 @@
+name: Bug report
+description: Something broken in @asciitopia/core or @asciitopia/react
+labels: [bug]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Package & version
+      placeholder: "@asciitopia/core 0.1.0"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Minimal steps, snippet, or sandbox link that reproduces the issue.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "Browser/OS, framework (React 19, plain TS, ...)"
