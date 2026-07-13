@@ -71,6 +71,16 @@
         "types": "./dist/patterns/aurora.d.cts",
         "default": "./dist/patterns/aurora.cjs"
       }
+    },
+    "./patterns/bonsai": {
+      "import": {
+        "types": "./dist/patterns/bonsai.d.ts",
+        "default": "./dist/patterns/bonsai.js"
+      },
+      "require": {
+        "types": "./dist/patterns/bonsai.d.cts",
+        "default": "./dist/patterns/bonsai.cjs"
+      }
     }
   },
   "main": "./dist/index.cjs",

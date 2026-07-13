@@ -1,4 +1,5 @@
 import { AuroraPattern, DEFAULT_AURORA_CONFIG } from './patterns/aurora.js';
+import { BonsaiPattern, DEFAULT_BONSAI_CONFIG } from './patterns/bonsai.js';
 import { DEFAULT_FIRE_CONFIG, FirePattern } from './patterns/fire.js';
 import { DEFAULT_RAIN_CONFIG, RainPattern } from './patterns/rain.js';
 import { DEFAULT_SNOW_CONFIG, SnowPattern } from './patterns/snow.js';
@@ -7,7 +8,7 @@ import type { AsciiPattern } from './types.js';
 
 // --- types ---
 
-export type PatternId = 'fire' | 'rain' | 'snow' | 'waves' | 'aurora';
+export type PatternId = 'fire' | 'rain' | 'snow' | 'waves' | 'aurora' | 'bonsai';
 
 export interface PatternRegistryEntry<C extends object = Record<string, unknown>> {
   readonly id: PatternId;
@@ -74,6 +75,13 @@ export const patterns: ReadonlyArray<PatternRegistryEntry> = [
     description: 'Northern lights from drifting fractal noise.',
     configDefaults: DEFAULT_AURORA_CONFIG,
     create: (config) => new AuroraPattern(config),
+  }),
+  /* @__PURE__ */ entry({
+    id: 'bonsai',
+    name: 'Bonsai',
+    description: 'Windswept trees growing limb by limb, with turning seasons.',
+    configDefaults: DEFAULT_BONSAI_CONFIG,
+    create: (config) => new BonsaiPattern(config),
   }),
 ];
 

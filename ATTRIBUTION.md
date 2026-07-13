@@ -7,6 +7,10 @@ They're credited here as inspiration:
 ## cbonsai by John Allbritten (jallbrit)
 https://gitlab.com/jallbrit/cbonsai (GPL-3.0)
 
+The bonsai pattern's premise — a procedural tree growing character by
+character — is inspired by cbonsai. asciitopia's growth model, branch and
+leaf art, pots, and tuning are original and were written independently.
+
 ## weathr by Veirt
 https://github.com/veirt/weathr (GPL-3.0)
 
