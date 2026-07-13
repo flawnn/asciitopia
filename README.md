@@ -2,7 +2,7 @@
 
 A library of animated, beautiful ASCII patterns for everybody.
 
-<!-- TODO: record hero.gif — cycles rain → aurora, third slot reserved -->
+<!-- hero.gif cycles all five patterns: fire → aurora → waves → rain → snow -->
 <img src=".github/assets/hero.gif" alt="asciitopia hero animation" width="720" />
 
 ## Why?
