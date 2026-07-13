@@ -6,7 +6,6 @@ import { WordmarkPage } from './wordmark/wordmark';
 
 const Footer = () => (
   <footer className="site-footer">
-    <span>MIT · asciitopia</span>
     <span className="site-footer__links">
       <a href="https://github.com/flawnn/asciitopia" rel="noreferrer" target="_blank">
         github

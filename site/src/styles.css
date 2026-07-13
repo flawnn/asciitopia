@@ -210,6 +210,9 @@ canvas {
 
 .hero__links a,
 .hero__links button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: var(--text-xs);
   font-weight: 340;
   font-stretch: 80%;
@@ -776,7 +779,7 @@ input[type="text"]:focus {
 
 .site-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 36px var(--pad-x) 44px;
   border-top: 1px solid var(--line);
   font-size: var(--text-xs);
