@@ -3,7 +3,7 @@ import { defineConfig } from 'tsup';
 // Single root export only (API spec §7: { ".": "./dist/index.js" }).
 export default defineConfig({
   entry: {
-    index: 'src/index.tsx',
+    index: 'src/index.ts',
   },
   format: ['esm', 'cjs'],
   dts: true,
