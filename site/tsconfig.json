@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "types": ["vite/client"],
+    // Typecheck against workspace sources, decoupled from build output
+    // (same approach as packages/react).
+    "paths": {
+      "@asciitopia/core": ["../packages/core/src/index.ts"],
+      "@asciitopia/react": ["../packages/react/src/index.ts"]
+    }
+  },
+  "include": ["src", "vite.config.ts"]
+}
