@@ -15,11 +15,11 @@ v0.1 ships five:
 
 | | Name | Description | Demo |
 | --- | --- | --- | --- |
-| <img src=".github/assets/fire.gif" width="120" alt="Fire pattern" /> | Fire | Rising flames with fuel modes, embers, sparks, and multiple palettes. | TBD |
-| <img src=".github/assets/rain.gif" width="120" alt="Rain pattern" /> | Rain | Falling drops with fading trails, impact flashes, and splash particles. | TBD |
-| <img src=".github/assets/snow.gif" width="120" alt="Snow pattern" /> | Snow | Drifting flakes on two depth layers with sway and wind. | TBD |
-| <img src=".github/assets/waves.gif" width="120" alt="Waves pattern" /> | Waves | Layered sine-and-noise ocean swell in ocean or mono colors. | TBD |
-| <img src=".github/assets/aurora.gif" width="120" alt="Aurora pattern" /> | Aurora | Northern lights from drifting fractal noise. | TBD |
+| <img src=".github/assets/fire.gif" width="120" alt="Fire pattern" /> | Fire | Rising flames with fuel modes, embers, sparks, and multiple palettes. | [live](https://flawnn.github.io/asciitopia/#/pattern/fire) |
+| <img src=".github/assets/rain.gif" width="120" alt="Rain pattern" /> | Rain | Falling drops with fading trails, impact flashes, and splash particles. | [live](https://flawnn.github.io/asciitopia/#/pattern/rain) |
+| <img src=".github/assets/snow.gif" width="120" alt="Snow pattern" /> | Snow | Drifting flakes on two depth layers with sway and wind. | [live](https://flawnn.github.io/asciitopia/#/pattern/snow) |
+| <img src=".github/assets/waves.gif" width="120" alt="Waves pattern" /> | Waves | Layered sine-and-noise ocean swell in ocean or mono colors. | [live](https://flawnn.github.io/asciitopia/#/pattern/waves) |
+| <img src=".github/assets/aurora.gif" width="120" alt="Aurora pattern" /> | Aurora | Northern lights from drifting fractal noise. | [live](https://flawnn.github.io/asciitopia/#/pattern/aurora) |
 
 ## Quickstart
 
