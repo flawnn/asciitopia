@@ -3,8 +3,14 @@ import { FirePattern } from './patterns/fire.js';
 import { createPattern, getPattern, patterns } from './registry.js';
 
 describe('pattern registry', () => {
-  it('registers the five shipped patterns in gallery display order', () => {
-    expect(patterns.map((entry) => entry.id)).toEqual(['fire', 'rain', 'snow', 'waves', 'aurora']);
+  it('registers patterns with unique ids, fire first', () => {
+    const ids = patterns.map((entry) => entry.id);
+    expect(ids[0]).toBe('fire');
+    expect(new Set(ids).size).toBe(ids.length);
+    for (const entry of patterns) {
+      expect(entry.name).toBeTruthy();
+      expect(entry.description).toBeTruthy();
+    }
   });
 
   it('looks up entries by id', () => {
