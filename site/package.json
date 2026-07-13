@@ -12,6 +12,7 @@
   "dependencies": {
     "@asciitopia/core": "workspace:*",
     "@asciitopia/react": "workspace:*",
+    "@fontsource-variable/martian-mono": "^5.2.7",
     "@fontsource/fira-mono": "^5.2.7",
     "react": "^19",
     "react-dom": "^19.2.7"
