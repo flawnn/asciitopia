@@ -1,5 +1,6 @@
 packages:
   - packages/*
+  - site
 
 # esbuild (a tsup dependency) runs a postinstall script; explicitly allow it
 # rather than silently ignoring build scripts (pnpm's secure default).
