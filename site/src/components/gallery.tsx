@@ -5,17 +5,20 @@ import { LiveCanvas } from './live-canvas';
 // Smaller glyphs for the miniature stages.
 const CARD_ENGINE: EngineOptions = { fontSize: 10 };
 
-interface PatternCardProps {
+// Hover corners, drawn clockwise: ┌ ┐ ┘ └ (delays live in the stylesheet).
+const CORNERS = ['┌', '┐', '└', '┘'] as const;
+
+interface PatternCellProps {
   entry: PatternRegistryEntry;
   index: number;
 }
 
-const PatternCard = ({ entry, index }: PatternCardProps) => {
+const PatternCell = ({ entry, index }: PatternCellProps) => {
   const ref = useRef<HTMLAnchorElement | null>(null);
   const [visible, setVisible] = useState(false);
   const pattern = useMemo(() => entry.create(), [entry]);
 
-  // A dozen simultaneous 60fps canvases would melt laptops — only the cards
+  // A dozen simultaneous 60fps canvases would melt laptops — only the cells
   // near the viewport animate.
   useEffect(() => {
     const node = ref.current;
@@ -28,22 +31,24 @@ const PatternCard = ({ entry, index }: PatternCardProps) => {
   }, []);
 
   return (
-    <a className="card" href={`#/pattern/${entry.id}`} ref={ref}>
-      <div className="card__stage">
+    <a className="cell" href={`#/pattern/${entry.id}`} ref={ref}>
+      {CORNERS.map((glyph, i) => (
+        <i aria-hidden="true" className={`cell__corner cell__corner--${i}`} key={glyph}>
+          {glyph}
+        </i>
+      ))}
+      <div className="cell__stage">
         <LiveCanvas
-          className="card__canvas"
+          className="cell__canvas"
           engineOptions={CARD_ENGINE}
           pattern={pattern}
           running={visible}
         />
       </div>
-      <div className="card__meta">
-        <div className="card__head">
-          <span className="card__no">{String(index + 1).padStart(2, '0')}</span>
-          <h3 className="card__name">{entry.name}</h3>
-          <span className="card__open">tune →</span>
-        </div>
-        <p className="card__desc">{entry.description}</p>
+      <div className="cell__meta">
+        <span className="cell__no">{String(index + 1).padStart(2, '0')}</span>
+        <h3 className="cell__name">{entry.name.toLowerCase()}</h3>
+        <span className="cell__go">→</span>
       </div>
     </a>
   );
@@ -52,13 +57,36 @@ const PatternCard = ({ entry, index }: PatternCardProps) => {
 export const Gallery = () => (
   <section className="gallery" id="gallery">
     <div className="gallery__head">
-      <h2 className="label">Pattern index</h2>
-      <span className="label label--faint">{patterns.length} registered</span>
+      <h2 className="label">index</h2>
+      <span className="label label--faint">
+        {String(patterns.length).padStart(2, '0')} patterns
+      </span>
     </div>
     <div className="gallery__grid">
       {patterns.map((entry, index) => (
-        <PatternCard entry={entry} index={index} key={entry.id} />
+        <PatternCell entry={entry} index={index} key={entry.id} />
       ))}
+      {/* the leftover row space stays on the grid — and invites the next pattern */}
+      <a
+        className="cell cell--filler"
+        href="https://github.com/flawnn/asciitopia/blob/main/CONTRIBUTING.md"
+        rel="noreferrer"
+        target="_blank"
+      >
+        {CORNERS.map((glyph, i) => (
+          <i aria-hidden="true" className={`cell__corner cell__corner--${i}`} key={glyph}>
+            {glyph}
+          </i>
+        ))}
+        <span aria-hidden="true" className="cell__blank">
+          ░ ▒ ▓
+        </span>
+        <div className="cell__meta">
+          <span className="cell__no">{String(patterns.length + 1).padStart(2, '0')}</span>
+          <h3 className="cell__name">yours</h3>
+          <span className="cell__go">↗</span>
+        </div>
+      </a>
     </div>
   </section>
 );

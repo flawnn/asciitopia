@@ -4,10 +4,10 @@ import { WordmarkPattern } from './wordmark-pattern';
 
 export type WordmarkMode = 'dark' | 'light';
 
-// site ink tones — the pattern's only chroma on either theme
+// site ink tokens (tokens.css --ink) — the pattern's only chroma on either theme
 const INK: Record<WordmarkMode, string> = {
-  dark: '#eae7de',
-  light: '#1d1c18',
+  dark: '#e8e4df',
+  light: '#221e1a',
 };
 
 const usePrefersReducedMotion = (): boolean => {

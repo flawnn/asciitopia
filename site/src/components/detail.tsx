@@ -1,9 +1,11 @@
 import { getPattern, type PatternRegistryEntry } from '@asciitopia/core';
 import { AsciiBackground } from '@asciitopia/react';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { setAccent } from '../lib/accent';
 import { changedEntries } from '../lib/config-code';
 import { Controls } from './controls';
 import { Snippet } from './snippet';
+import { ThemeToggle } from './theme-toggle';
 
 interface PatternLabProps {
   entry: PatternRegistryEntry;
@@ -13,6 +15,12 @@ const PatternLab = ({ entry }: PatternLabProps) => {
   const [config, setConfig] = useState<Record<string, unknown>>(() => ({
     ...entry.configDefaults,
   }));
+
+  // the page accents from the pattern it shows
+  useEffect(() => {
+    setAccent(entry.id);
+    return () => setAccent(null);
+  }, [entry.id]);
 
   // setConfig is deliberately not part of the pattern contract in v0.1 —
   // knob changes recreate the pattern (init IS the reset path).
@@ -27,12 +35,12 @@ const PatternLab = ({ entry }: PatternLabProps) => {
         <a className="detail__back" href="#/">
           ← index
         </a>
-        <span className="label">{entry.name.toLowerCase()}</span>
+        <ThemeToggle className="theme-toggle--stage" />
       </nav>
 
       <aside className="panel">
         <header className="panel__head">
-          <h2 className="panel__title">{entry.name}</h2>
+          <h2 className="panel__title">{entry.name.toLowerCase()}</h2>
           <p className="panel__desc">{entry.description}</p>
         </header>
 

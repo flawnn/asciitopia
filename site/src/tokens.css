@@ -1,0 +1,91 @@
+/* asciitopia site tokens — "on the grid" design language.
+   Neutrals tinted toward hue 70 (amber, the resting accent). The adaptive
+   --accent follows the active pattern via html[data-accent] and marks
+   interaction states only — never decoration, never body text. */
+
+/* registered so accent swaps transition (~400ms) instead of snapping */
+@property --accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(0.75 0.13 70);
+}
+
+@property --accent-stage {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(0.75 0.13 70);
+}
+
+:root {
+  color-scheme: dark; /* dark fallback; the pre-paint script sets data-theme */
+
+  /* surfaces & neutrals — paper / charcoal per the brief */
+  --bg: light-dark(oklch(0.97 0.004 70), oklch(0.16 0.008 70));
+  --bg-deep: light-dark(oklch(0.94 0.006 70), oklch(0.14 0.008 70));
+  --ink: light-dark(oklch(0.24 0.01 70), oklch(0.92 0.008 70));
+  --ink-dim: light-dark(oklch(0.45 0.012 70), oklch(0.68 0.012 70));
+  --ink-faint: light-dark(oklch(0.6 0.012 70), oklch(0.47 0.01 70));
+  --line: light-dark(oklch(0.89 0.008 70), oklch(0.26 0.008 70));
+  --line-bright: light-dark(oklch(0.81 0.01 70), oklch(0.36 0.01 70));
+
+  /* the stage: pattern canvases sit on charcoal in both themes */
+  --stage: oklch(0.13 0.008 70);
+  --stage-ink: oklch(0.92 0.008 70);
+  --stage-ink-dim: oklch(0.68 0.012 70);
+  --stage-line: oklch(0.3 0.01 70);
+
+  /* adaptive accent — resting amber; light variants drop lightness 0.18.
+     --accent-stage is the dark-theme value for elements over the stage. */
+  --accent: light-dark(oklch(0.57 0.13 70), oklch(0.75 0.13 70));
+  --accent-stage: oklch(0.75 0.13 70);
+
+  /* type — Martian Mono for all UI; Fira Mono lives inside canvases only */
+  --font-ui: "Martian Mono Variable", "Fira Mono", ui-monospace, monospace;
+  --text-xs: 0.6875rem;
+  --text-sm: 0.875rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.4375rem;
+
+  /* space */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 48px;
+  --pad-x: clamp(20px, 5vw, 80px);
+
+  transition:
+    --accent 0.4s ease,
+    --accent-stage 0.4s ease;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* fire keeps the resting amber; the rest swap the accent */
+:root[data-accent="rain"] {
+  --accent: light-dark(oklch(0.52 0.1 240), oklch(0.7 0.1 240));
+  --accent-stage: oklch(0.7 0.1 240);
+}
+
+:root[data-accent="snow"] {
+  --accent: light-dark(oklch(0.62 0.05 230), oklch(0.8 0.05 230));
+  --accent-stage: oklch(0.8 0.05 230);
+}
+
+:root[data-accent="waves"] {
+  --accent: light-dark(oklch(0.52 0.1 200), oklch(0.7 0.1 200));
+  --accent-stage: oklch(0.7 0.1 200);
+}
+
+:root[data-accent="aurora"] {
+  --accent: light-dark(oklch(0.54 0.11 160), oklch(0.72 0.11 160));
+  --accent-stage: oklch(0.72 0.11 160);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    transition: none;
+  }
+}
