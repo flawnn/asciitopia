@@ -20,4 +20,4 @@ engine.start();
 
 Full docs, pattern gallery, and configuration reference: [github.com/flawnn/asciitopia](https://github.com/flawnn/asciitopia).
 
-MIT — see [LICENSE](./LICENSE).
+MIT, see [LICENSE](./LICENSE).

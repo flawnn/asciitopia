@@ -1,6 +1,6 @@
 # Contributing
 
-asciitopia is a growing collection of animated ASCII patterns — new patterns are the contribution we want most. Anything that animates beautifully on a character grid qualifies.
+asciitopia is a growing collection of animated ASCII patterns. New patterns are the contribution we want most: if it animates on a character grid and looks good, it qualifies.
 
 ## Adding a pattern
 
@@ -39,28 +39,28 @@ asciitopia is a growing collection of animated ASCII patterns — new patterns a
        charW: number,
        charH: number,
      ): void {
-       // you own ctx.fillStyle — draw with fillText on the grid
+       // you own ctx.fillStyle; draw with fillText on the grid
      }
    }
    ```
 
-2. **Register** it in `packages/core/src/registry.ts`: add your id to the `PatternId` union and an entry to `patterns`. The conformance suite now tests your pattern automatically — no test writing needed.
+2. **Register** it in `packages/core/src/registry.ts`: add your id to the `PatternId` union and an entry to `patterns`. The conformance suite picks it up on the next `pnpm test` run; you write no tests.
 
 3. **Export** it from `packages/core/src/index.ts`, and mirror a subpath entry in `packages/core/tsup.config.ts` and `package.json#exports` (copy the `fire` lines).
 
-4. **Verify**: `pnpm test` runs the conformance checks against your pattern; `pnpm dev` shows it live in the gallery with auto-generated knobs — it appears by itself, the site is registry-driven.
+4. **Verify**: `pnpm test` runs the conformance checks against your pattern; `pnpm dev` shows it live in the gallery with auto-generated knobs. The gallery reads the registry, so your pattern appears without any site changes.
 
 5. **Open a PR** with a GIF or screenshot of the pattern running.
 
-For anything beyond a pattern — or if you're unsure an idea fits — open an issue first.
+For anything beyond a pattern, or if you're unsure an idea fits, open an issue first.
 
 ## Ground rules
 
-- **Original work only.** Ports of existing code or copied ASCII art are rejected unless the source license is MIT-compatible — credit the source in a header comment and `ATTRIBUTION.md`. "Inspired by" is welcome; copied expression is not. The same goes for AI-generated imitations of existing art.
-- **dt-based animation.** Speed derives from `dt` (milliseconds), never from frame counts.
+- **Original work.** Write your own code and art. Material from other projects is only OK when its license is MIT-compatible; credit the source in a header comment and in `ATTRIBUTION.md`. Take inspiration freely. AI-generated imitations of existing art count as copies.
+- **dt-based animation.** Derive speed from `dt` (milliseconds), not from frame counts.
 - **No per-frame allocations.** Build buffers in `init()`; you have a 60fps budget.
 - **Config with defaults.** Every knob in a `Config` interface, `Partial<Config>` constructor, exported `DEFAULT_*_CONFIG`.
-- **Any grid size.** 1×1 to 500×200 without crashing — the conformance suite checks.
+- **Any grid size.** 1×1 to 500×200 without crashing. The conformance suite checks this.
 
 ## Development
 
@@ -71,6 +71,6 @@ pnpm dev                                  # gallery as live playground
 
 ## Review
 
-One maintainer, spare time — reviews may take days, and most PRs go a round or two of discussion. We check that it looks good in the gallery, reads clean, and the rules above hold.
+One maintainer, spare time: reviews may take days, and most PRs go a round or two of discussion. We check that the pattern looks good in the gallery, the code reads clean, and the rules above hold.
 
 By contributing, you agree your contributions are licensed under the project's [MIT License](./LICENSE).

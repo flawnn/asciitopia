@@ -23,7 +23,7 @@ v0.1 ships five:
 
 ## Quickstart
 
-**Vanilla JS** — `@asciitopia/core`:
+**Vanilla JS** with `@asciitopia/core`:
 
 ```ts
 import { CanvasEngine, FirePattern } from '@asciitopia/core';
@@ -37,12 +37,12 @@ engine.setPattern(new FirePattern());
 engine.start();
 ```
 
-**React** — `@asciitopia/react`:
+**React** with `@asciitopia/react`:
 
 ```tsx
 import { AsciiBackground } from '@asciitopia/react';
 
-// Give the canvas real dimensions via CSS — the engine sizes off the
+// Give the canvas real dimensions via CSS; the engine sizes off the
 // observed box (position: fixed; inset: 0; width/height: 100%; z-index: -1).
 export const App = () => (
   <AsciiBackground className="ascii-bg" pattern="fire" />
@@ -89,11 +89,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for the contribution flow.
 
 ## Credits
 
-- [cbonsai](https://gitlab.com/jallbrit/cbonsai) — John Allbritten. Inspiration for terminal-native ASCII art.
-- [weathr](https://github.com/veirt/weathr) — Veirt. Inspiration for animated weather-style patterns.
+- [cbonsai](https://gitlab.com/jallbrit/cbonsai) by John Allbritten, terminal-native ASCII trees.
+- [weathr](https://github.com/veirt/weathr) by Veirt, animated terminal weather.
 
 Full details in [ATTRIBUTION.md](./ATTRIBUTION.md).
 
 ## License
 
-MIT — see [LICENSE](./LICENSE).
+MIT, see [LICENSE](./LICENSE).
