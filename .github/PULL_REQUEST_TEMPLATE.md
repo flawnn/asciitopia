@@ -9,3 +9,4 @@
 - [ ] New patterns export a `Config` interface and a `DEFAULT_*_CONFIG`
 - [ ] Attribution rules followed (`ATTRIBUTION.md`) — no code or art copied from incompatibly-licensed projects
 - [ ] Changeset added if published packages are affected (`pnpm changeset`)
+- [ ] New patterns: GIF or screenshot of it running included below
