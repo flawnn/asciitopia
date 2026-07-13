@@ -25,4 +25,4 @@ body:
     id: provenance
     attributes:
       label: Provenance
-      description: Inspired by an existing project? Link it — licensing matters (see ATTRIBUTION.md).
+      description: Inspired by an existing project? Link it; licensing matters (see ATTRIBUTION.md).
