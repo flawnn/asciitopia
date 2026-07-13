@@ -1,7 +1,7 @@
 {
   "name": "@asciitopia/core",
   "version": "0.0.0",
-  "description": "Framework-agnostic ASCII canvas animation engine and patterns.",
+  "description": "Framework-agnostic ASCII canvas animation engine and patterns",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
