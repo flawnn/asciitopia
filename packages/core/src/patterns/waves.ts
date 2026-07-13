@@ -96,8 +96,9 @@ export class WavePattern implements AsciiPattern {
     const range = 2 * maxH;
     const isMono = palette === 'mono';
 
-    for (let row = 0; row < rows; row++) {
-      for (let col = 0; col < cols; col++) {
+    // overdraw one row/col so the full-field fill covers the grid remainder at the edges
+    for (let row = 0; row <= rows; row++) {
+      for (let col = 0; col <= cols; col++) {
         const x = col / cols;
         const y = row / rows;
 
