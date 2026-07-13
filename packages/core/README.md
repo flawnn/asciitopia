@@ -1,12 +1,23 @@
 # @asciitopia/core
 
-> **Placeholder.** The real README for this package lands with the root
-> README, before v0.1.0 ships.
+Framework-agnostic ASCII canvas animation engine, patterns, and registry. Zero React, zero app coupling.
 
-Framework-agnostic ASCII canvas animation engine, patterns, and registry.
-Zero React, zero app coupling. See the [monorepo root](https://github.com/flawnn/asciitopia)
-for the full project.
+```bash
+npm install @asciitopia/core
+```
 
-## License
+```ts
+import { CanvasEngine, FirePattern } from '@asciitopia/core';
 
-MIT — see [LICENSE](./LICENSE).
+const canvas = document.querySelector('canvas')!;
+canvas.width = 800;
+canvas.height = 400;
+
+const engine = new CanvasEngine(canvas);
+engine.setPattern(new FirePattern());
+engine.start();
+```
+
+Full docs, pattern gallery, and configuration reference: [github.com/flawnn/asciitopia](https://github.com/flawnn/asciitopia).
+
+MIT, see [LICENSE](./LICENSE).
