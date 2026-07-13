@@ -2,6 +2,7 @@ import { DetailView } from './components/detail';
 import { Gallery } from './components/gallery';
 import { Hero } from './components/hero';
 import { useHashRoute } from './router';
+import { WordmarkPage } from './wordmark/wordmark';
 
 const Footer = () => (
   <footer className="site-footer">
@@ -21,6 +22,7 @@ export const App = () => {
   const route = useHashRoute();
 
   if (route.view === 'detail') return <DetailView id={route.id} />;
+  if (route.view === 'wordmark') return <WordmarkPage />;
 
   return (
     <>
