@@ -1,6 +1,6 @@
 // Root export surface.
-// bonsai and weather are intentionally excluded from this release and must
-// never be re-exported from root when they do land (they're subpath-only).
+// weather is intentionally excluded until its clean-room rewrite lands and
+// must never be re-exported from root before then (it'll be subpath-only).
 
 export type { AsciiPattern } from './types.js';
 
@@ -24,3 +24,6 @@ export type { WaveConfig } from './patterns/waves.js';
 
 export { AuroraPattern, DEFAULT_AURORA_CONFIG } from './patterns/aurora.js';
 export type { AuroraConfig } from './patterns/aurora.js';
+
+export { BonsaiPattern, DEFAULT_BONSAI_CONFIG } from './patterns/bonsai.js';
+export type { BonsaiConfig, BonsaiPalette, BonsaiPot } from './patterns/bonsai.js';
