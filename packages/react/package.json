@@ -1,7 +1,7 @@
 {
   "name": "@asciitopia/react",
   "version": "0.1.0",
-  "description": "React bindings for @asciitopia/core — an <AsciiBackground> component.",
+  "description": "React bindings for @asciitopia/core \u2014 an <AsciiBackground> component.",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
@@ -49,5 +49,12 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flawnn/asciitopia.git",
+    "directory": "packages/react"
+  },
+  "homepage": "https://github.com/flawnn/asciitopia",
+  "bugs": "https://github.com/flawnn/asciitopia/issues"
 }
