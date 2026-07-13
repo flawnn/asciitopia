@@ -1,0 +1,28 @@
+name: Pattern proposal
+description: Propose a new ASCII pattern
+labels: [pattern-proposal]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Pattern name
+      placeholder: "e.g. starfield"
+    validations:
+      required: true
+  - type: textarea
+    id: intended-look
+    attributes:
+      label: Intended look
+      description: A sketch, ASCII mock-up, screenshot, or reference link showing what the pattern should look like in motion.
+    validations:
+      required: true
+  - type: textarea
+    id: config-ideas
+    attributes:
+      label: Config ideas
+      description: What should be tweakable? (colors, density, speed, ...)
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Provenance
+      description: Inspired by an existing project? Link it — licensing matters (see ATTRIBUTION.md).
