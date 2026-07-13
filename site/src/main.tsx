@@ -1,10 +1,13 @@
+import '@fontsource-variable/martian-mono/wdth.css';
 import '@fontsource/fira-mono/400.css';
-import '@fontsource/fira-mono/500.css';
-import '@fontsource/fira-mono/700.css';
+import './tokens.css';
 import './styles.css';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { App } from './app';
+import { initTheme } from './theme';
+
+initTheme();
 
 const mount = (): void => {
   const root = document.getElementById('root');

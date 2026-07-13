@@ -6,19 +6,27 @@
     <title>asciitopia — live ASCII animation backgrounds</title>
     <meta
       name="description"
-      content="Live ASCII animation backgrounds for the web. Framework-agnostic canvas engine, five patterns, first-class React bindings. MIT."
+      content="A library of animated, beautiful ASCII patterns for everybody. Framework-agnostic canvas engine, first-class React bindings. MIT."
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="theme-color" content="#0c0c0f" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f5f2" />
+    <meta name="theme-color" content="#100d0a" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="asciitopia" />
     <meta
       property="og:description"
-      content="Live ASCII animation backgrounds for the web. Framework-agnostic core, first-class React bindings."
+      content="A library of animated, beautiful ASCII patterns for everybody."
     />
     <meta property="og:url" content="https://flawnn.github.io/asciitopia/" />
     <meta property="og:image" content="https://flawnn.github.io/asciitopia/og.png" />
     <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      // theme before first paint: stored choice, else system, else dark
+      var t = localStorage.getItem('asciitopia:theme');
+      if (t !== 'light' && t !== 'dark')
+        t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.dataset.theme = t;
+    </script>
   </head>
   <body>
     <div id="root"></div>
