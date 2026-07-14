@@ -2,7 +2,7 @@
 
 A library of animated, beautiful ASCII patterns for everybody.
 
-<!-- hero.gif cycles all five patterns: fire → aurora → waves → rain → snow -->
+<!-- hero.gif cycles: fire → aurora → waves → rain → snow -->
 <img src=".github/assets/hero.gif" alt="asciitopia hero animation" width="720" />
 
 ## Why?
@@ -11,7 +11,7 @@ Because. I fucking love ASCII art.
 
 ## Patterns
 
-v0.1 ships five:
+Seven patterns and growing:
 
 | | Name | Description | Demo |
 | --- | --- | --- | --- |
@@ -20,6 +20,10 @@ v0.1 ships five:
 | <img src=".github/assets/snow.gif" width="120" alt="Snow pattern" /> | Snow | Drifting flakes on two depth layers with sway and wind. | [live](https://flawnn.github.io/asciitopia/#/pattern/snow) |
 | <img src=".github/assets/waves.gif" width="120" alt="Waves pattern" /> | Waves | Layered sine-and-noise ocean swell in ocean or mono colors. | [live](https://flawnn.github.io/asciitopia/#/pattern/waves) |
 | <img src=".github/assets/aurora.gif" width="120" alt="Aurora pattern" /> | Aurora | Northern lights from drifting fractal noise. | [live](https://flawnn.github.io/asciitopia/#/pattern/aurora) |
+| <img src=".github/assets/bonsai.gif" width="120" alt="Bonsai pattern" /> | Bonsai | Windswept trees growing limb by limb, with turning seasons. | [live](https://flawnn.github.io/asciitopia/#/pattern/bonsai) |
+| <img src=".github/assets/weather.gif" width="120" alt="Weather pattern" /> | Weather | A cabin under living weather — feed it a location and it mirrors your sky. | [live](https://flawnn.github.io/asciitopia/#/pattern/weather) |
+
+Weather imports from the `@asciitopia/core/weather` subpath; everything else from the root.
 
 ## Quickstart
 
