@@ -1,17 +1,24 @@
 export type ConfigEntry = [string, unknown];
 
-/** Fields whose current value differs from the registry default. */
+/** Fields whose current value differs from the registry default — including
+ *  keys the lab layered on top of the defaults (e.g. weather's demoReel). */
 export const changedEntries = (
   config: Record<string, unknown>,
   defaults: Readonly<Record<string, unknown>>,
-): ConfigEntry[] =>
-  Object.entries(defaults)
-    .filter(([key, def]) => JSON.stringify(config[key]) !== JSON.stringify(def))
-    .map(([key]) => [key, config[key]] as ConfigEntry);
+): ConfigEntry[] => {
+  const keys = [...new Set([...Object.keys(defaults), ...Object.keys(config)])];
+  return keys
+    .filter((key) => JSON.stringify(config[key]) !== JSON.stringify(defaults[key]))
+    .map((key) => [key, config[key]] as ConfigEntry);
+};
 
 const formatValue = (value: unknown): string => {
   if (typeof value === 'string') return `'${value}'`;
   if (Array.isArray(value)) return `[${value.join(', ')}]`;
+  if (value !== null && typeof value === 'object') {
+    const fields = Object.entries(value).map(([key, v]) => `${key}: ${formatValue(v)}`);
+    return `{ ${fields.join(', ')} }`;
+  }
   return String(value);
 };
 

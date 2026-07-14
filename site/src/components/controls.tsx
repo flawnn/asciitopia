@@ -12,13 +12,13 @@ const isNumberPair = (value: unknown): value is [number, number] =>
 
 const fmt = (value: number): string => String(Number(value.toFixed(3)));
 
-interface SliderProps {
+export interface SliderProps {
   hint: SliderHint;
   value: number;
   onInput: (value: number) => void;
 }
 
-const Slider = ({ hint, value, onInput }: SliderProps) => (
+export const Slider = ({ hint, value, onInput }: SliderProps) => (
   <input
     max={hint.max}
     min={hint.min}

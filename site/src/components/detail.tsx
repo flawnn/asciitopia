@@ -6,6 +6,7 @@ import { changedEntries } from '../lib/config-code';
 import { Controls } from './controls';
 import { Snippet } from './snippet';
 import { ThemeToggle } from './theme-toggle';
+import { applyWeatherOverride, WeatherGodMode } from './weather-god-mode';
 
 interface PatternLabProps {
   entry: PatternRegistryEntry;
@@ -43,6 +44,18 @@ const PatternLab = ({ entry }: PatternLabProps) => {
           <h2 className="panel__title">{entry.name.toLowerCase()}</h2>
           <p className="panel__desc">{entry.description}</p>
         </header>
+
+        {/* god mode: weather is the one pattern whose star knob (the sky itself)
+            lives in a nested object the generic controls skip */}
+        {entry.id === 'weather' && (
+          <WeatherGodMode
+            config={config}
+            defaults={entry.configDefaults}
+            onOverride={(weather) =>
+              setConfig((c) => applyWeatherOverride(c, entry.configDefaults, weather))
+            }
+          />
+        )}
 
         <Controls
           config={config}
