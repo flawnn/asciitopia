@@ -81,6 +81,16 @@
         "types": "./dist/patterns/bonsai.d.cts",
         "default": "./dist/patterns/bonsai.cjs"
       }
+    },
+    "./weather": {
+      "import": {
+        "types": "./dist/weather/index.d.ts",
+        "default": "./dist/weather/index.js"
+      },
+      "require": {
+        "types": "./dist/weather/index.d.cts",
+        "default": "./dist/weather/index.cjs"
+      }
     }
   },
   "main": "./dist/index.cjs",

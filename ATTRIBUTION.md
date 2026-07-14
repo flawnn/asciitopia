@@ -14,5 +14,6 @@ leaf art, pots, and tuning are original and were written independently.
 ## weathr by Veirt
 https://github.com/veirt/weathr (GPL-3.0)
 
-## wego / wttr.in
-https://github.com/schachmat/wego (MIT)
+The weather pattern's premise — a cozy scene living under real weather —
+is inspired by weathr. asciitopia's scene art, weather systems, ground
+generator, and tuning are original and were written independently.
