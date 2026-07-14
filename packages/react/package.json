@@ -1,7 +1,7 @@
 {
   "name": "@asciitopia/react",
-  "version": "0.1.0",
-  "description": "React bindings for @asciitopia/core \u2014 an <AsciiBackground> component.",
+  "version": "0.2.0",
+  "description": "React bindings for @asciitopia/core — an <AsciiBackground> component.",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
