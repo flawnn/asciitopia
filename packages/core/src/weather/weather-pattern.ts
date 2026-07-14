@@ -35,6 +35,9 @@ export interface WeatherConfig {
   /** Scene shown before the first fetch resolves / when source is null.
    *  Default: a calm, warm, clear night — stars, moon, and fireflies. */
   fallbackWeather: WeatherData;
+  /** Sourceless mode only: drift through the built-in cycle after the opening
+   *  scene. false pins fallbackWeather forever. Default true. */
+  demoReel?: boolean;
 }
 
 export const DEFAULT_WEATHER_CONFIG: WeatherConfig = {
@@ -221,7 +224,7 @@ export class WeatherPattern implements AsciiPattern {
         this.pollTimer = this.config.pollIntervalSeconds;
         this.poll();
       }
-    } else {
+    } else if (this.config.demoReel !== false) {
       this.advanceDemo(dt / 1000);
     }
 
