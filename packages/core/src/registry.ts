@@ -5,10 +5,11 @@ import { DEFAULT_RAIN_CONFIG, RainPattern } from './patterns/rain.js';
 import { DEFAULT_SNOW_CONFIG, SnowPattern } from './patterns/snow.js';
 import { DEFAULT_WAVE_CONFIG, WavePattern } from './patterns/waves.js';
 import type { AsciiPattern } from './types.js';
+import { DEFAULT_WEATHER_CONFIG, WeatherPattern } from './weather/index.js';
 
 // --- types ---
 
-export type PatternId = 'fire' | 'rain' | 'snow' | 'waves' | 'aurora' | 'bonsai';
+export type PatternId = 'fire' | 'rain' | 'snow' | 'waves' | 'aurora' | 'bonsai' | 'weather';
 
 export interface PatternRegistryEntry<C extends object = Record<string, unknown>> {
   readonly id: PatternId;
@@ -82,6 +83,15 @@ export const patterns: ReadonlyArray<PatternRegistryEntry> = [
     description: 'Windswept trees growing limb by limb, with turning seasons.',
     configDefaults: DEFAULT_BONSAI_CONFIG,
     create: (config) => new BonsaiPattern(config),
+  }),
+  // network-free by default: source is null until an app passes one, so the
+  // gallery / registry path always renders the fallback scene
+  /* @__PURE__ */ entry({
+    id: 'weather',
+    name: 'Weather',
+    description: 'A cabin under living weather — feed it a location and it mirrors your sky.',
+    configDefaults: DEFAULT_WEATHER_CONFIG,
+    create: (config) => new WeatherPattern(config),
   }),
 ];
 

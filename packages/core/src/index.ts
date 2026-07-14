@@ -1,6 +1,6 @@
 // Root export surface.
-// weather is intentionally excluded until its clean-room rewrite lands and
-// must never be re-exported from root before then (it'll be subpath-only).
+// weather is subpath-only ("@asciitopia/core/weather") by design — never
+// re-export it here; the root surface stays fetch-free for tree-shakers.
 
 export type { AsciiPattern } from './types.js';
 
