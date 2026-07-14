@@ -9,6 +9,7 @@
     // (same approach as packages/react).
     "paths": {
       "@asciitopia/core": ["../packages/core/src/index.ts"],
+      "@asciitopia/core/weather": ["../packages/core/src/weather/index.ts"],
       "@asciitopia/react": ["../packages/react/src/index.ts"]
     }
   },
