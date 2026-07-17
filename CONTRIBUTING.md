@@ -56,7 +56,7 @@ For anything beyond a pattern, or if you're unsure an idea fits, open an issue f
 
 ## Ground rules
 
-- **Original work.** Write your own code and art. Material from other projects is only OK when its license is MIT-compatible; credit the source in a header comment and in `ATTRIBUTION.md`. Take inspiration freely. AI-generated imitations of existing art count as copies.
+- **Original work.** Write your own code and art. Material from other projects is only OK when its license is MIT-compatible; credit the source in a header comment. Take inspiration freely. AI-generated imitations of existing art count as copies.
 - **dt-based animation.** Derive speed from `dt` (milliseconds), not from frame counts.
 - **No per-frame allocations.** Build buffers in `init()`; you have a 60fps budget.
 - **Config with defaults.** Every knob in a `Config` interface, `Partial<Config>` constructor, exported `DEFAULT_*_CONFIG`.

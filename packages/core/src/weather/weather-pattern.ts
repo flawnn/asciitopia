@@ -1,5 +1,5 @@
 // Inspired by weathr by Veirt (https://github.com/veirt/weathr).
-// Scene art, systems, and constants are original to asciitopia — see ATTRIBUTION.md.
+// Scene art, systems, and constants are original to asciitopia.
 import type { AsciiPattern } from '../types.js';
 import { OpenMeteoProvider } from './open-meteo.js';
 import { AirplaneSystem } from './systems/airplane.js';

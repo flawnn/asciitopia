@@ -91,13 +91,6 @@ export interface AsciiPattern {
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for the contribution flow.
 
-## Credits
-
-- [cbonsai](https://gitlab.com/jallbrit/cbonsai) by John Allbritten, terminal-native ASCII trees.
-- [weathr](https://github.com/veirt/weathr) by Veirt, animated terminal weather.
-
-Full details in [ATTRIBUTION.md](./ATTRIBUTION.md).
-
 ## License
 
 MIT, see [LICENSE](./LICENSE).

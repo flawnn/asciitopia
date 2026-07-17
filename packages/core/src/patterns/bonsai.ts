@@ -1,5 +1,5 @@
 // Inspired by cbonsai by John Allbritten (https://gitlab.com/jallbrit/cbonsai).
-// Growth model, art, and constants are original to asciitopia — see ATTRIBUTION.md.
+// Growth model, art, and constants are original to asciitopia.
 import { createNoise2D } from 'simplex-noise';
 import type { AsciiPattern } from '../types.js';
 
