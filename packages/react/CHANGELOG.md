@@ -1,5 +1,13 @@
 # @asciitopia/react
 
+## 0.2.1
+
+### Patch Changes
+
+- 4eef92a: Documentation cleanup.
+- Updated dependencies [4eef92a]
+  - @asciitopia/core@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes

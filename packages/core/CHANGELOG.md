@@ -1,5 +1,11 @@
 # @asciitopia/core
 
+## 0.2.1
+
+### Patch Changes
+
+- 4eef92a: Documentation cleanup.
+
 ## 0.2.0
 
 ### Minor Changes
